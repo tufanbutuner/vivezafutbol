@@ -7,15 +7,17 @@ export default async function Home() {
   console.log(posts);
 
   return (
-    <div className="posts-container">
+    <div className="container">
       <h1 className="posts-header">LATEST ARTICLES</h1>
-      {posts.map((post) => (
-        <div key={post._id} className="card-container">
-          <Image src={post.image} width={200} height={200} alt="" />
-          {post.name}
-          <p>{post.author}</p>
-        </div>
-      ))}
+      <div className="posts-container">
+        {posts.map((post) => (
+          <div key={post._id} className="card-container">
+            <Image src={post.image} width={200} height={200} alt="" />
+            {post.name}
+            <p>{post.author}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
