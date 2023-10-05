@@ -86,7 +86,6 @@ body {
 }
 
 body {
-  padding: 1rem;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -104,6 +103,7 @@ a {
 .navbar-header {
   font-size: 5rem;
   font-weight: 900;
+  padding: 2rem;
 }
 
 .container {
@@ -111,11 +111,13 @@ a {
   flex-direction: column;
   gap: 1rem;
   margin: 2rem;
+  height: 100vh;
 }
 
 .posts-container {
   display: flex;
   flex-direction: row;
+  gap: 2rem;
 }
 
 .posts-header {
@@ -125,6 +127,16 @@ a {
 .card-container {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
 @media (prefers-color-scheme: dark) {
