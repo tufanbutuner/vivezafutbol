@@ -1,18 +1,15 @@
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemas'
+import { defineConfig } from "sanity";
+import { deskTool } from "sanity/desk";
+import schemas from "./sanity/schemas";
 
-export default defineConfig({
-  name: 'default',
-  title: 'vivezafutbol',
+const config = defineConfig({
+  projectId: "hl99jlx1",
+  dataset: "production",
+  title: "Viveza Futbol",
+  apiVersion: "2023-10-05",
+  basePath: "/admin",
+  plugins: [deskTool()],
+  schema: { types: schemas },
+});
 
-  projectId: 'hl99jlx1',
-  dataset: 'production',
-
-  plugins: [deskTool(), visionTool()],
-
-  schema: {
-    types: schemaTypes,
-  },
-})
+export default config;
