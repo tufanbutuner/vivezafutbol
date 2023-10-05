@@ -106,6 +106,21 @@ a {
   font-weight: 900;
 }
 
+.posts-container {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.posts-header {
+  font-size: 3rem;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
