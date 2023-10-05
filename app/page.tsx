@@ -12,7 +12,6 @@ export default async function Home() {
         <div key={post._id} style={{ margin: "2rem" }}>
           {post.name}
           <p>{post.author}</p>
-          {/* <p>{post.content}</p> */}
         </div>
       ))}
     </div>
