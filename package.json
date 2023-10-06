@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^3.0.9",
     "@vercel/analytics": "^1.0.2",
     "next": "13.5.4",
     "next-sanity": "^5.5.5",
     "react": "^18",
     "react-dom": "^18",
-    "sanity": "^3.17.0"
+    "sanity": "^3.17.0",
+    "sass": "^1.69.0"
   },
   "devDependencies": {
     "@types/node": "^20",

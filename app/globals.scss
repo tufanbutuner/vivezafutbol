@@ -132,6 +132,22 @@ a {
   font-weight: 500;
 }
 
+.post-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+
+.post-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 75%;
+  aspect-ratio: 70/45;
+  margin: 2rem auto;
+}
+
 .footer {
   display: flex;
   justify-content: center;
