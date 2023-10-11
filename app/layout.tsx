@@ -8,7 +8,8 @@ import "./globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "VIVEZA FUTBOL",
+  title:
+    "Viveza Futbol - European football, players, stories and experiences - vivezafutbol.com",
   description: "Futbol, uncovered.",
 };
 
