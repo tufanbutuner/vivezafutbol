@@ -12,7 +12,7 @@ export default async function Post({ params }: Props) {
   const post = await getPost(slug);
 
   return (
-    <>
+      <div className="post-container">
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-27DMNSPFPY" />
       <Script id="google-analytics">
         {`
@@ -23,8 +23,7 @@ export default async function Post({ params }: Props) {
           gtag('config', 'G-27DMNSPFPY');
         `}
       </Script>
-      <div className="post-container">
-        <h1>{post.name}</h1>
+    <h1>{post.name}</h1>
 
         <div className="post-image-container">
           <Image
@@ -41,6 +40,5 @@ export default async function Post({ params }: Props) {
           <PortableText value={post.content} />
         </div>
       </div>
-    </>
   );
 }
