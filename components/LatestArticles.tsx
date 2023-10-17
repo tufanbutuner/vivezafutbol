@@ -7,16 +7,16 @@ import "swiper/css/pagination";
 
 export default async function LatestArticles() {
   const posts: Post[] = await getPosts();
-  const latestPosts = posts
-    .slice(0, 5)
-    .sort(
-      (a, b) =>
-        new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime()
-    );
+  // const latestPosts = posts
+  //   .slice(0, 5)
+  //   .sort(
+  //     (a, b) =>
+  //       new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime()
+  //   );
 
   return (
     <div className="posts-container">
-      {latestPosts.map((post) => (
+      {posts.map((post) => (
         <Link href={`/posts/${post.slug}`} key={post._id}>
           <div className="card-container">
             <Image
