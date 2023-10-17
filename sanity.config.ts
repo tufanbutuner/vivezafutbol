@@ -6,7 +6,7 @@ const config = defineConfig({
   projectId: "hl99jlx1",
   dataset: "production",
   title: "Viveza Futbol",
-  apiVersion: "2023-10-05",
+  apiVersion: "2023-10-17",
   basePath: "/admin",
   plugins: [deskTool()],
   schema: { types: schemas },
