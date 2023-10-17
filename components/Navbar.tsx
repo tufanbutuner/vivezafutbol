@@ -5,6 +5,11 @@ export default function Navbar() {
     <Link href={"/"}>
       <div className="navbar">
         <p className="navbar-header">VIVEZA</p>
+        <ul>
+          <li>FOOTBALL</li>
+          <li>TRAVEL</li>
+          <li>EUROPEAN HISTORY</li>
+        </ul>
       </div>
     </Link>
   );

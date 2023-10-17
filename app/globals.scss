@@ -106,6 +106,20 @@ a {
   padding: 2rem;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  ul {
+    padding: 2rem;
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
