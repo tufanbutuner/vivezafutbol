@@ -24,7 +24,7 @@ export default async function LatestArticles() {
               width={350}
               height={350}
               alt=""
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
             />
             <p>{post.name}</p>
             <p>{post.author}</p>
