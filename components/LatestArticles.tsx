@@ -7,12 +7,6 @@ import "swiper/css/pagination";
 
 export default async function LatestArticles() {
   const posts: Post[] = await getPosts();
-  // const latestPosts = posts
-  //   .slice(0, 5)
-  //   .sort(
-  //     (a, b) =>
-  //       new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime()
-  //   );
 
   return (
     <div className="posts-container">
@@ -23,11 +17,13 @@ export default async function LatestArticles() {
               src={post.image}
               width={350}
               height={350}
-              alt=""
+              alt={post.alt}
               style={{ objectFit: "cover" }}
             />
-            <p>{post.name}</p>
-            <p>{post.author}</p>
+            <div>
+              <p>{post.title}</p>
+              <p>{post.description}</p>
+            </div>
           </div>
         </Link>
       ))}

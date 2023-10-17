@@ -12,7 +12,7 @@ export default async function Post({ params }: Props) {
   const post = await getPost(slug);
 
   return (
-      <div className="post-container">
+    <div className="post-container">
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-27DMNSPFPY" />
       <Script id="google-analytics">
         {`
@@ -23,22 +23,22 @@ export default async function Post({ params }: Props) {
           gtag('config', 'G-27DMNSPFPY');
         `}
       </Script>
-    <h1>{post.name}</h1>
+      <h1>{post.name}</h1>
 
-        <div className="post-image-container">
-          <Image
-            src={post.image}
-            alt={post.name}
-            fill
-            sizes="(max-width: 768px) 100vh, 700px"
-            objectFit="cover"
-            priority
-          />
-        </div>
-
-        <div>
-          <PortableText value={post.content} />
-        </div>
+      <div className="post-image-container">
+        <Image
+          src={post.image}
+          alt={post.alt}
+          fill
+          sizes="(max-width: 768px) 100vh, 1920px"
+          objectFit="cover"
+          priority
+        />
       </div>
+
+      <div>
+        <PortableText value={post.content} />
+      </div>
+    </div>
   );
 }

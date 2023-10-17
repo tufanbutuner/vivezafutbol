@@ -4,8 +4,13 @@ const post = {
   type: "document",
   fields: [
     {
-      name: "name",
+      name: "title",
       title: "Title",
+      type: "string",
+    },
+    {
+      name: "description",
+      title: "Description",
       type: "string",
     },
     {
