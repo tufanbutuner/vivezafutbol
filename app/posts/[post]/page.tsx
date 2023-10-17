@@ -23,7 +23,7 @@ export default async function Post({ params }: Props) {
           gtag('config', 'G-27DMNSPFPY');
         `}
       </Script>
-      <h1>{post.name}</h1>
+      <h1>{post.title}</h1>
 
       <div className="post-image-container">
         <Image
