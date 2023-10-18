@@ -15,8 +15,8 @@ export default async function LatestArticles() {
           <div className="card-container">
             <Image
               src={post.image}
-              width={350}
-              height={350}
+              width={320}
+              height={320}
               alt={post.alt}
               style={{ objectFit: "cover" }}
             />
