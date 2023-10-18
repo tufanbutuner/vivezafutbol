@@ -7,7 +7,8 @@ export async function getPosts(): Promise<Post[]> {
     groq`*[_type == "post"]{
         _id,
         _createdAt,
-        name,
+        title,
+        description,
         "slug": slug.current,
         author,
         "image": image.asset->url,
@@ -22,7 +23,8 @@ export async function getPost(slug: string): Promise<Post> {
     groq`*[_type == "post" && slug.current == $slug][0]{
         _id,
         _createdAt,
-        name,
+        title,
+        description,
         "slug": slug.current,
         author,
         "image": image.asset->url,
