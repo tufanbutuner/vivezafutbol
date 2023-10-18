@@ -8,7 +8,7 @@ export type Post = {
   slug: string;
   image: string;
   alt: string;
-  url: string;
   author: string;
   content: PortableTextBlock[];
+  tags: string[];
 };

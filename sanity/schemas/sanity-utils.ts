@@ -12,8 +12,8 @@ export async function getPosts(): Promise<Post[]> {
         "slug": slug.current,
         author,
         "image": image.asset->url,
-        url,
-        content
+        content,
+        tags,
     }`
   );
 }
@@ -28,8 +28,8 @@ export async function getPost(slug: string): Promise<Post> {
         "slug": slug.current,
         author,
         "image": image.asset->url,
-        url,
-        content
+        content,
+        tags,
     }`,
     { slug }
   );

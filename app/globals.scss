@@ -166,6 +166,16 @@ a {
   margin: 2rem auto;
 }
 
+.post-content-container {
+  padding: 0rem 6rem;
+}
+
+.post-tags {
+  display: flex;
+
+  gap: 1rem;
+}
+
 .footer {
   display: flex;
   justify-content: center;

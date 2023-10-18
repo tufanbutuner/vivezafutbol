@@ -36,9 +36,11 @@ export default async function Post({ params }: Props) {
         />
       </div>
 
-      <div>
+      <div className="post-content-container">
         <PortableText value={post.content} />
       </div>
+
+      <div className="post-tags">{post.tags}</div>
     </div>
   );
 }

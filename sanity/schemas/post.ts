@@ -38,15 +38,19 @@ const post = {
       ],
     },
     {
-      name: "url",
-      title: "URL",
-      type: "url",
-    },
-    {
       name: "content",
       title: "Content",
       type: "array",
       of: [{ type: "block" }],
+    },
+    {
+      title: "Tags",
+      name: "tags",
+      type: "array",
+      of: [{ type: "string" }],
+      options: {
+        layout: "tags",
+      },
     },
   ],
 };
