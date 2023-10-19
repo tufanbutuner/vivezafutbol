@@ -11,8 +11,10 @@ export default async function Post({ params }: Props) {
   const slug = params.post;
   const post = await getPost(slug);
 
+  const createdAtDate = new Date(post._createdAt).toLocaleDateString();
+
   return (
-    <div className="post-container">
+    <>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-27DMNSPFPY" />
       <Script id="google-analytics">
         {`
@@ -23,24 +25,44 @@ export default async function Post({ params }: Props) {
           gtag('config', 'G-27DMNSPFPY');
         `}
       </Script>
-      <h1>{post.title}</h1>
 
       <div className="post-image-container">
         <Image
           src={post.image}
-          alt={post.alt}
+          alt={"hi"}
           fill
           sizes="(max-width: 768px) 100vh, 1920px"
-          objectFit="cover"
+          style={{ objectFit: "cover" }}
           priority
         />
       </div>
 
-      <div className="post-content-container">
-        <PortableText value={post.content} />
-      </div>
+      <div className="post-container">
+        <div className="post-metadata-container">
+          <h1>{post.title}</h1>
+          <div className="post-metadata">
+            <span>
+              {createdAtDate} by {post.author}
+            </span>
+          </div>
+        </div>
+        <div className="post-content-container">
+          <PortableText value={post.content} />
+          dsp
+        </div>
 
-      <div className="post-tags">{post.tags}</div>
-    </div>
+        <div className="post-tags">{post.tags}</div>
+
+        {/* <div>
+        <TwitterShareButton
+          title={post.title} // Make sure post.title is the correct title
+          via={"@vivezafutbol"} // This is the Twitter handle
+          url={"http://twitter.com"}
+        >
+          Share on Twitter
+        </TwitterShareButton>
+      </div> */}
+      </div>
+    </>
   );
 }
