@@ -55,3 +55,15 @@ export default async function Post({ params }: Props) {
     </>
   );
 }
+
+export async function getStaticProps({ params }: Props) {
+  const slug = params.post;
+  const post = await getPost(slug);
+
+  const revalidate = 60;
+
+  return {
+    props: { post },
+    revalidate,
+  };
+}
