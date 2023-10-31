@@ -148,6 +148,7 @@ a {
   gap: 0.5rem;
   text-transform: uppercase;
   font-weight: 500;
+  width: 320px;
 }
 
 .post-container {
@@ -156,13 +157,13 @@ a {
   justify-content: center;
   align-items: center;
   margin: 2rem;
-  padding: 0rem 8rem;
+  padding: 0rem 33rem;
 }
 
 .post-image-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 4;
+  aspect-ratio: 3 / 2;
 }
 
 .post-tags {
