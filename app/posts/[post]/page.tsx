@@ -52,16 +52,6 @@ export default async function Post({ params }: Props) {
         </div>
 
         <div className="post-tags">{post.tags}</div>
-
-        {/* <div>
-        <TwitterShareButton
-          title={post.title} // Make sure post.title is the correct title
-          via={"@vivezafutbol"} // This is the Twitter handle
-          url={"http://twitter.com"}
-        >
-          Share on Twitter
-        </TwitterShareButton>
-      </div> */}
       </div>
     </>
   );
