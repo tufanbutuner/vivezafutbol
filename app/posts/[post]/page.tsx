@@ -48,7 +48,6 @@ export default async function Post({ params }: Props) {
         </div>
         <div className="post-content-container">
           <PortableText value={post.content} />
-          dsp
         </div>
 
         <div className="post-tags">{post.tags}</div>
