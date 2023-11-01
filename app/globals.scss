@@ -157,7 +157,7 @@ a {
   justify-content: center;
   align-items: center;
   margin: 2rem;
-  padding: 0rem 33rem;
+  padding: 0rem 20rem;
 }
 
 .post-image-container {
@@ -168,7 +168,14 @@ a {
 
 .post-tags {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+
+  p {
+    padding: 0.5rem;
+    background: white;
+    color: black;
+  }
 }
 
 .footer {
@@ -199,8 +206,7 @@ a {
 
 .post-metadata {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: space-between;
   margin-top: 1rem;
 
   span {

@@ -10,9 +10,8 @@ type Props = {
 export default async function Post({ params }: Props) {
   const slug = params.post;
   const post = await getPost(slug);
-  fetch("https://...", { next: { revalidate: 3600 } });
 
-  const createdAtDate = new Date(post._createdAt).toLocaleDateString();
+  const createdAtDate = new Date(post._createdAt).toLocaleDateString("en-GB");
 
   return (
     <>
@@ -43,16 +42,19 @@ export default async function Post({ params }: Props) {
         <div className="post-metadata-container">
           <h1>{post.title}</h1>
           <div className="post-metadata">
-            <span>
-              {createdAtDate} by {post.author}
-            </span>
+            <span>{post.author}</span>
+            <span>{createdAtDate}</span>
           </div>
         </div>
         <div className="post-content-container">
           <PortableText value={post.content} />
         </div>
 
-        <div className="post-tags">{post.tags}</div>
+        <div className="post-tags">
+          {post.tags.map((tag, index) => (
+            <p key={index}>{tag}</p>
+          ))}
+        </div>
       </div>
     </>
   );

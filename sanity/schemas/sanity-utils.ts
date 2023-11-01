@@ -28,6 +28,7 @@ export async function getPost(slug: string): Promise<Post> {
         "slug": slug.current,
         author,
         "image": image.asset->url,
+        "alt": image.alt,
         content,
         tags,
     }`,
