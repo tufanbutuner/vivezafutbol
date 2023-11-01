@@ -34,7 +34,7 @@ export default async function LatestArticles() {
 export async function getStaticProps() {
   const posts = await getPosts();
 
-  const revalidate = 60; // 1 hour
+  const revalidate = 60;
 
   return {
     props: { posts },

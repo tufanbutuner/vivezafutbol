@@ -10,6 +10,7 @@ type Props = {
 export default async function Post({ params }: Props) {
   const slug = params.post;
   const post = await getPost(slug);
+  fetch("https://...", { next: { revalidate: 3600 } });
 
   const createdAtDate = new Date(post._createdAt).toLocaleDateString();
 
@@ -29,11 +30,12 @@ export default async function Post({ params }: Props) {
       <div className="post-image-container">
         <Image
           src={post.image}
-          alt={"hi"}
+          alt={post.alt}
           fill
           sizes="(max-width: 768px) 100vh, 1920px"
           style={{ objectFit: "cover" }}
           priority
+          loading="eager"
         />
       </div>
 
@@ -54,16 +56,4 @@ export default async function Post({ params }: Props) {
       </div>
     </>
   );
-}
-
-export async function getStaticProps({ params }: Props) {
-  const slug = params.post;
-  const post = await getPost(slug);
-
-  const revalidate = 60;
-
-  return {
-    props: { post },
-    revalidate,
-  };
 }
