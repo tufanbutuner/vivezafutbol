@@ -31,6 +31,14 @@ export async function getPost(slug: string): Promise<Post> {
         "alt": image.alt,
         content,
         tags,
+        content[]{
+          ...,
+          _type == 'image' => {
+            "image": asset->url,
+            "alt": alt,
+            "caption": caption
+          }
+        }
     }`,
     { slug }
   );

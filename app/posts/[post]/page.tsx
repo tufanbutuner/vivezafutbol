@@ -7,9 +7,49 @@ type Props = {
   params: { post: string };
 };
 
+const customSerializers = {
+  types: {
+    image: ({ value }: any) => {
+      return (
+        <>
+          <div className="post-image-container">
+            <Image
+              src={value.image}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vh, 1920px"
+              style={{ objectFit: "cover" }}
+              priority
+              loading="eager"
+            />
+          </div>
+          <p
+            style={{
+              color: "white",
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "1rem",
+              fontStyle: "italic",
+              fontSize: "0.9rem",
+            }}
+          >
+            {value.caption}
+          </p>
+        </>
+      );
+    },
+  },
+};
+
+const components = {
+  types: customSerializers.types, // Include your custom serializer for 'image'
+};
+
 export default async function Post({ params }: Props) {
   const slug = params.post;
   const post = await getPost(slug);
+
+  console.log(post);
 
   const createdAtDate = new Date(post._createdAt).toLocaleDateString("en-GB");
 
@@ -47,7 +87,7 @@ export default async function Post({ params }: Props) {
           </div>
         </div>
         <div className="post-content-container">
-          <PortableText value={post.content} />
+          <PortableText value={post.content} components={components} />
         </div>
 
         <div className="post-tags">

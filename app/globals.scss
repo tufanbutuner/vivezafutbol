@@ -148,7 +148,7 @@ a {
   gap: 0.5rem;
   text-transform: uppercase;
   font-weight: 500;
-  width: 320px;
+  width: 400px;
 }
 
 .post-container {
@@ -243,5 +243,14 @@ a {
 
   .posts-header {
     font-size: 1.75rem;
+  }
+
+  .card-container {
+    width: fit-content;
+
+    img {
+      width: auto;
+      height: 320px;
+    }
   }
 }
