@@ -1,4 +1,5 @@
 import { getPost } from "@/sanity/schemas/sanity-utils";
+import { Post } from "@/types/post";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Script from "next/script";
@@ -6,6 +7,8 @@ import Script from "next/script";
 type Props = {
   params: { post: string };
 };
+
+const dynamic = "force-dynamic";
 
 const customSerializers = {
   types: {
@@ -47,9 +50,7 @@ const components = {
 
 export default async function Post({ params }: Props) {
   const slug = params.post;
-  const post = await getPost(slug);
-
-  console.log(post);
+  const post: Post = await getPost(slug);
 
   const createdAtDate = new Date(post._createdAt).toLocaleDateString("en-GB");
 

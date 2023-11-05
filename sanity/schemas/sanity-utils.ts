@@ -40,6 +40,7 @@ export async function getPost(slug: string): Promise<Post> {
           }
         }
     }`,
-    { slug }
+    { slug },
+    { next: { tags: ["post"] } }
   );
 }
